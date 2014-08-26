@@ -6,13 +6,13 @@ Gem::Specification.new do |s|
   s.version = NewrelicFaraday::VERSION::STRING
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Eric Abbott"]
+  s.authors = ["Eric Abbott", "Matt Griffin"]
   s.description = "Faraday instrumentation for Newrelic."
-  s.email = ["eric.abbott@viximo.com"]
+  s.email = ["matt@griffinonline.org"]
   s.has_rdoc = false
   s.files = %w( README.rdoc LICENSE newrelic-faraday.gemspec )
   s.files += Dir.glob("lib/**/*")
-  s.homepage = "http://github.com/Viximo/newrelic-faraday"
+  s.homepage = "http://github.com/roguecomma/newrelic-faraday"
   s.require_paths = ["lib"]
   s.rubyforge_project = "newrelic-faraday"
   s.rubygems_version = "1.5.3"
