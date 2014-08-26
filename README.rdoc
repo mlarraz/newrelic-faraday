@@ -1,6 +1,6 @@
 = newrelic-faraday
 
-* http://github.com/Viximo/newrelic-faraday
+* http://github.com/roguecomma/newrelic-faraday
 
 == DESCRIPTION:
 
