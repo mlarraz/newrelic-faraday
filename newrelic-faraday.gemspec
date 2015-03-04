@@ -6,7 +6,7 @@ require 'newrelic_faraday/version'
 Gem::Specification.new do |spec|
   spec.name          = 'newrelic-faraday'
   spec.version       = NewrelicFaraday::VERSION::STRING
-  spec.authors       = ['Eric Abbott', 'Matt Griffin']
+  spec.authors       = ['Eric Abbott', 'Matt Griffin', 'Kyle VanderBeek']
   spec.email         = ['matt@griffinonline.org']
   spec.summary       = 'Faraday instrumentation for Newrelic.'
   spec.description   = 'Faraday instrumentation for Newrelic.'
