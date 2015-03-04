@@ -1,42 +1,26 @@
-$LOAD_PATH.unshift 'lib'
-require "newrelic_faraday/version"
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'newrelic_faraday/version'
 
-Gem::Specification.new do |s|
-  s.name = "newrelic-faraday"
-  s.version = NewrelicFaraday::VERSION::STRING
+Gem::Specification.new do |spec|
+  spec.name          = 'newrelic-faraday'
+  spec.version       = NewrelicFaraday::VERSION::STRING
+  spec.authors       = ['Eric Abbott', 'Matt Griffin']
+  spec.email         = ['matt@griffinonline.org']
+  spec.summary       = 'Faraday instrumentation for Newrelic.'
+  spec.description   = 'Faraday instrumentation for Newrelic.'
+  spec.homepage      = 'http://github.com/roguecomma/newrelic-faraday'
+  spec.license       = 'MIT'
 
-  s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
-  s.authors = ["Eric Abbott", "Matt Griffin"]
-  s.description = "Faraday instrumentation for Newrelic."
-  s.email = ["matt@griffinonline.org"]
-  s.has_rdoc = false
-  s.files = %w( README.rdoc LICENSE newrelic-faraday.gemspec )
-  s.files += Dir.glob("lib/**/*")
-  s.homepage = "http://github.com/roguecomma/newrelic-faraday"
-  s.require_paths = ["lib"]
-  s.rubyforge_project = "newrelic-faraday"
-  s.rubygems_version = "1.5.3"
-  s.summary = "Faraday instrumentation for Newrelic."
-  s.license = "MIT"
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.executables   = spec.files.grep(/^bin\//) { |f| File.basename(f) }
+  spec.test_files    = spec.files.grep(/^(test|spec|features)\//)
+  spec.require_paths = ['lib']
 
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
+  spec.add_dependency 'faraday',      '>= 0.6', '< 0.9'
+  spec.add_dependency 'newrelic_rpm', '~> 3.0'
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_runtime_dependency(%q<faraday>, ["< 0.9"])
-      s.add_runtime_dependency(%q<faraday>, [">= 0.6"])
-      s.add_runtime_dependency(%q<newrelic_rpm>, ["~> 3.0"])
-      s.add_development_dependency(%q<rdoc>, ["~> 3.10"])
-    else
-      s.add_dependency(%q<faraday>, ["< 0.9"])
-      s.add_dependency(%q<faraday>, [">= 0.6"])
-      s.add_dependency(%q<newrelic_rpm>, ["~> 3.0"])
-      s.add_dependency(%q<rdoc>, ["~> 3.10"])
-    end
-  else
-    s.add_dependency(%q<faraday>, ["< 0.9"])
-    s.add_dependency(%q<faraday>, [">= 0.6"])
-    s.add_dependency(%q<newrelic_rpm>, ["~> 3.0"])
-    s.add_dependency(%q<rdoc>, ["~> 3.10"])
-  end
+  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'rspec', '~> 3.1'
 end
