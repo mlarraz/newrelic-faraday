@@ -29,12 +29,10 @@ DependencyDetection.defer do
       alias run_request run_request_with_newrelic_trace
 
       def parse_host_for_newrelic(url)
-        begin
-          return host if host
-          URI(url).host.to_s
-        rescue
-          ''
-        end
+        return host if host
+        URI(url).host.to_s
+      rescue
+        ''
       end
     end
   end
