@@ -14,7 +14,7 @@ DependencyDetection.defer do
       def run_request_with_newrelic_trace(method, url, params, headers, &block)
         newrelic_host = parse_host_for_newrelic url
         metrics = ["External/#{newrelic_host}/Faraday::Connection/#{method}", "External/#{newrelic_host}/all", "External/all"]
-        if NewRelic::Agent::Instrumentation::MetricFrame.recording_web_transaction?
+        if NewRelic::Agent::Transaction.recording_web_transaction?
           metrics << "External/allWeb"
         else
           metrics << "External/allOther"
