@@ -1,3 +1,5 @@
+require 'new_relic/agent'
+
 DependencyDetection.defer do
   named :faraday
 
