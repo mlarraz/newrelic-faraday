@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(/^(test|spec|features)\//)
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'faraday', '>= 0.6', '< 0.13'
-  spec.add_dependency 'newrelic_rpm', '~> 3.0'
+  spec.add_dependency 'faraday', '>= 0.6', '< 0.20'
+  spec.add_dependency 'newrelic_rpm', '>= 3.0'
 
   spec.add_development_dependency 'rake'
   spec.add_development_dependency 'rspec', '~> 3.1'
